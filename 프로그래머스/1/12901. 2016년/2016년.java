@@ -4,7 +4,13 @@ import java.util.Locale;
 
 class Solution {
     public String solution(int a, int b) {
-        LocalDate localDate = LocalDate.of(2016, a, b);
-        return localDate.getDayOfWeek().getDisplayName(TextStyle.SHORT_STANDALONE, Locale.US).toUpperCase();
+        int[] month = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        String[] day = {"THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"};
+
+        for (int i = 0; i < a - 1; i++) {
+            b += month[i];
+        }
+        
+        return day[b % 7];
     }
 }
