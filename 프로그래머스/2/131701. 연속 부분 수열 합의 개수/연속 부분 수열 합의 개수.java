@@ -7,11 +7,7 @@ class Solution {
         for (int i = 0; i < elements.length; i++) {
             int sum = 0;
             for (int j = i; j < elements.length + i; j++) {
-                if (j >= elements.length) {
-                    sum += elements[j - elements.length];
-                } else {
-                    sum += elements[j];
-                }
+                sum += elements[j % elements.length];
                 setResult.add(sum);
             }
         }
