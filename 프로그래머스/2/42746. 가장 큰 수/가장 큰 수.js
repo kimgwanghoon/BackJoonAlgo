@@ -1,5 +1,5 @@
 function solution(numbers) {
-    let result = numbers
+    const result = numbers
         .map((n) => String(n))
         .sort((a, b) => (b + a) - (a + b))
         .join('')
